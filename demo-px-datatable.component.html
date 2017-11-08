@@ -1,0 +1,31 @@
+<div class="drawer-container">
+  <px-data-table [tableData]="demoDatatableItems$ | async" page-size="3" #demoDatatable [includeAllColumns]="false" striped
+    show-column-chooser emitChanges [sortable]="true">
+    <px-data-table-column label="First Name" name='first' [editable]="true" type="string">
+    </px-data-table-column>
+    <!-- <px-data-table-column label="Can Play" name="open" type="toggle"> -->
+    <!-- </px-data-table-column> -->
+    <px-data-table-column name="last" type="dropdown" [editable]="true" [dropdownItems]="datatableItemsMeta[0]['dropdownItems']"></px-data-table-column>
+    <px-data-table-column name="color" type="dropdown" [editable]="true" [dropdownItems]="datatableItemsMeta[1]['dropdownItems']"></px-data-table-column>
+    <px-data-table-column name="date"></px-data-table-column>
+    <!-- <px-data-table-column name="date" [sortable]="true" [sort-function-name]="sortTable"></px-data-table-column> -->
+    <px-data-table-column name="actions" type="html" (click)="callOnAction($event)"></px-data-table-column>
+  </px-data-table>
+  <px-panel #rightPanel>
+    <div slot="minimized">
+      <px-icon icon="px-nav:expand" style="transform:rotate(-90deg)" (on-tap)="openPanel($event)"></px-icon>
+    </div>
+    <div slot="content">
+      <px-icon icon="px-nav:close" (click)="closePanel($event)"></px-icon>
+      <app-edit-px-datatable-row [rowData]="editRow"></app-edit-px-datatable-row>
+      <button class="btn" (click)="closePanel($event)">Cancel</button>
+      <button class="btn btn--primary" (click)="closePanel($event)">Apply</button>
+    </div>
+  </px-panel>
+</div>
+<div>Action:
+  <pre>{{(actionRow$ | async)?.row.actions}}</pre>
+</div>
+<div>Row Detail:
+  <pre>{{(actionRow$ | async)?.row | json}}</pre>
+</div>

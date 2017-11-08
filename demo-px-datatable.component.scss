@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+  position: relative;
+
+  & .drawer-container {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 100%;
+    position: relative;
+  }
+}
