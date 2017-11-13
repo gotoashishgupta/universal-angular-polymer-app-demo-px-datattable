@@ -1,0 +1,10 @@
+{
+  "name": "@ashtr/demo-px-datatable",
+  "version": "0.0.1",
+  "description": "predix-ui px-datatable demo with curd operations using reactive form",
+  "main": "index.ts",
+  "repository": "git@github.com:gotoashishgupta/universal-angular-polymer-app-demo-px-datattable.git",
+  "author": "Ashish Gupta <gotoashishgupta@gmail.com>",
+  "license": "MIT",
+  "private": true
+}

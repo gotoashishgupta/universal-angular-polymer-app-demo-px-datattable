@@ -9,11 +9,11 @@
     <px-data-table-column name="color" type="dropdown" [editable]="true" [dropdownItems]="datatableItemsMeta[1]['dropdownItems']"></px-data-table-column>
     <px-data-table-column name="date"></px-data-table-column>
     <!-- <px-data-table-column name="date" [sortable]="true" [sort-function-name]="sortTable"></px-data-table-column> -->
-    <px-data-table-column name="actions" type="html" (click)="callOnAction($event)"></px-data-table-column>
+    <px-data-table-column name="actions" type="html"></px-data-table-column>
   </px-data-table>
   <px-panel #rightPanel>
     <div slot="minimized">
-      <px-icon icon="px-nav:expand" style="transform:rotate(-90deg)" (on-tap)="openPanel($event)"></px-icon>
+      <px-icon icon="px-nav:expand" style="transform:rotate(-90deg)"></px-icon>
     </div>
     <div slot="content">
       <px-icon icon="px-nav:close" (click)="closePanel($event)"></px-icon>
